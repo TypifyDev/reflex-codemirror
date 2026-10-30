@@ -1,3 +1,4 @@
+cabal-version:       3.4
 name:                reflex-codemirror
 version:             0.1.1.0
 synopsis:            Reflex CodeMirror
@@ -11,7 +12,6 @@ maintainer:          devops@atidot.com
 copyright:           Copyright Atidot Ltd 2016
 category:            Other
 build-type:          Simple
-cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
@@ -30,12 +30,13 @@ library
                      , data-default
                      , jsaddle
                      , ghcjs-dom
-                     , reflex
-                     , reflex-dom
                      , ref-tf
+                     , effectful-core
+                     , reflex
+                     , reflex-dom-core-effectful
 
-  ghc-options:         -O2 -Wall -Werror
-  default-language:    Haskell2010
+  ghc-options:         -O2 -Wall -Werror -Wno-error=unused-packages -Wno-error=deriving-typeable -Wno-error=x-partial -Wno-error=incomplete-patterns -Wno-error=deprecations -Wno-error=incomplete-uni-patterns
+  default-language:    GHC2024
 
 
 source-repository head

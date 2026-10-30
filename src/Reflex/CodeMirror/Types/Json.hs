@@ -6,5 +6,5 @@ module Reflex.CodeMirror.Types.Json where
 import "aeson" Data.Aeson.TH
 import         Reflex.CodeMirror.Types.Types
 
-$(deriveJSON defaultOptions{omitNothingFields = True, fieldLabelModifier = drop (length "_configuration_")} ''Configuration)
-$(deriveJSON defaultOptions{omitNothingFields = True, fieldLabelModifier = drop (length "_lineChar_")} ''LineChar)
+$(deriveJSON defaultOptions{omitNothingFields = True, fieldLabelModifier = drop (length ("_configuration_" :: String))} ''Configuration)
+$(deriveJSON defaultOptions{omitNothingFields = True, fieldLabelModifier = drop (length ("_lineChar_" :: String))} ''LineChar)

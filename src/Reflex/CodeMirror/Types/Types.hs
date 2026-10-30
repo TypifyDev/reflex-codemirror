@@ -5,7 +5,6 @@ module Reflex.CodeMirror.Types.Types where
 
 import "base"  GHC.Generics (Generic)
 import "base"  Data.Data (Data)
-import "base"  Data.Typeable (Typeable)
 import "aeson" Data.Aeson (Value)
 import "text"  Data.Text (Text)
 
@@ -42,10 +41,10 @@ data Configuration
     --
     , _configuration_pollInterval :: !(Maybe Int) -- Ms
     --
-    } deriving (Show, Read, Eq, Data, Typeable, Generic)
+    } deriving (Show, Read, Eq, Data, Generic)
 
 data LineChar
     = LineChar
     { _lineChar_line :: !Int
     , _lineChar_char :: !Int
-    } deriving (Show, Read, Eq, Data, Typeable, Generic)
+    } deriving (Show, Read, Eq, Data, Generic)

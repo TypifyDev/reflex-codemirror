@@ -1,6 +1,8 @@
 {-# LANGUAGE PackageImports #-}
-{-# LANGUAGE JavaScriptFFI #-}
 {-# LANGUAGE ScopedTypeVariables #-}
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE ExtendedDefaultRules #-}
+{-# OPTIONS_GHC -Wno-type-defaults #-}
 module Reflex.CodeMirror.FFI where
 
 import "lens"      Control.Lens hiding (element, (#))
@@ -9,6 +11,8 @@ import "aeson"     Data.Aeson (toJSON)
 import "jsaddle"   Language.Javascript.JSaddle
 import             GHCJS.DOM.Element (IsElement, toElement, unElement)
 import             Reflex.CodeMirror.Types
+
+default (Text)
 
 newtype CodeMirrorRef = CodeMirrorRef
                       { unCodeMirrorRef :: JSVal
